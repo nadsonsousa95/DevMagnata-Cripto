@@ -251,3 +251,33 @@ tbody {
      }
 
 }
+
+@media screen and (max-width: 480px) {
+  .home {
+    width: 98%;
+    margin: 1rem auto;
+  }
+
+  .form {
+    gap: 0.5rem;
+  }
+
+
+
+  .tr {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tdlabel,
+  .tdProfit,
+  .tdLoss {
+    padding-left: 50%;
+  }
+
+  .tdlabel:before,
+  .tdProfit::before,
+  .tdLoss::before {
+    width: 45%;
+  }
+}

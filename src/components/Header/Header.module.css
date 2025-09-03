@@ -1,0 +1,16 @@
+
+
+.headermain{
+    margin-top: 20px;
+    padding: 20px;
+    height: 120px;
+}
+
+.logo{
+    color: white;
+    text-align: center;
+}
+
+.logo span{
+    color: rgb(241, 159, 17);
+}

@@ -1,0 +1,7 @@
+.cointainerChart{
+     width: "100%";
+     height: 200px;
+     border: 1px solid #f19f11;
+     border-radius: 5px;
+     padding: 10px;
+}

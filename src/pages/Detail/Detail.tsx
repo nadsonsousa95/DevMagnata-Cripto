@@ -5,13 +5,15 @@ import styles from "./Detail.module.css";
 import { BsSearch } from 'react-icons/bs'
 import { PriceChart } from "../../components/PriceChart/PriceChart";
 
+const apiKey = import.meta.env.VITE_COINCAP_API_KEY;
+
 export function Detail() {
   const { cripto } = useParams<{ cripto: string }>();
   const navigate = useNavigate();
   const [coin, setCoin] = useState<CoinsProps | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const url = `https://rest.coincap.io/v3/assets?limit=2000&apiKey=5add21dbe437ac67f4d350a64f12dbb4804da8d792594ee6f7d2de416ce346a0`;
+  const url = `https://rest.coincap.io/v3/assets?limit=2000&apiKey=${apiKey}`;
 
   useEffect(() => {
     async function getCoin() {

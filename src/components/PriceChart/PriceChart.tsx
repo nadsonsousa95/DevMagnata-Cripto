@@ -8,12 +8,14 @@ interface HistoryData {
   date: string;
 }
 
+const apiKey = import.meta.env.VITE_COINCAP_API_KEY;
+
 export function PriceChart({ coinId }: { coinId: string }) {
   const [history, setHistory] = useState<HistoryData[]>([]);
 
   useEffect(() => {
     async function fetchHistory() {
-      const res = await fetch(`https://api.coincap.io/v3/assets/${coinId}/history?interval=m1&apiKey=5add21dbe437ac67f4d350a64f12dbb4804da8d792594ee6f7d2de416ce346a0`);
+      const res = await fetch(`https://api.coincap.io/v3/assets/${coinId}/history?interval=m1&apiKey=${apiKey}`);
       const data = await res.json();
       setHistory(data.data);
     }

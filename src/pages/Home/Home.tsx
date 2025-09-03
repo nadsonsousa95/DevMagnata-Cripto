@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import type { FormEvent } from 'react'
 
+
 export interface CoinsProps{
     id: string;
     changePercent24Hr: string;
@@ -27,6 +28,8 @@ interface DataProps{
     data: CoinsProps[]
 }
 
+const apiKey = import.meta.env.VITE_COINCAP_API_KEY;
+
 export function Home() {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
@@ -34,7 +37,7 @@ export function Home() {
   const [loading, setLoading] = useState(false);
   const [limit, setLimit] = useState(10);
   
-  const url = `https://rest.coincap.io/v3/assets?limit=${limit}&offset=0&apiKey=5add21dbe437ac67f4d350a64f12dbb4804da8d792594ee6f7d2de416ce346a0`;
+  const url = `https://rest.coincap.io/v3/assets?limit=${limit}&offset=0&apiKey=${apiKey}`;
 
   useEffect(()=>{
     setLoading(true);

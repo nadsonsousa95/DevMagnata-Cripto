@@ -262,6 +262,9 @@ tbody {
     gap: 0.5rem;
   }
 
+  .logo:hover {
+    transform: none;
+}
 
 
   .tr {

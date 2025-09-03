@@ -3,7 +3,7 @@ import { BsSearch } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import type { FormEvent } from 'react'
-
+import { Loading } from '../../components/Loading/Loading'
 
 export interface CoinsProps{
     id: string;
@@ -109,6 +109,10 @@ export function Home() {
     setLimit(l => l+5);
   }
 
+if (loading) {
+    return <Loading/>;
+  }
+
   return (
     <main className={styles.home}>
         <form className={styles.form} onSubmit={handleSearch}>
@@ -121,7 +125,6 @@ export function Home() {
             <button type='submit'><BsSearch size={25} color='white'></BsSearch></button>
         </form>
 
-         {loading && <p className={styles.loading}>Carregando cripto moedas...</p>}
         <table>
             <thead>
                 <tr>

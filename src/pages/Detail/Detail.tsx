@@ -4,6 +4,7 @@ import type { CoinsProps } from "../Home/Home";
 import styles from "./Detail.module.css";
 import { BsSearch } from 'react-icons/bs'
 import { PriceChart } from "../../components/PriceChart/PriceChart";
+import { Loading } from "../../components/Loading/Loading";
 
 const apiKey = import.meta.env.VITE_COINCAP_API_KEY;
 
@@ -37,7 +38,7 @@ export function Detail() {
   }, [cripto, url]);
 
   if (loading) {
-    return <p className={styles.loadingText}>Carregando informações...</p>;
+    return <Loading/>;
   }
 
   if (!coin) {

@@ -34,7 +34,7 @@ export function Home() {
   const [loading, setLoading] = useState(false);
   const [limit, setLimit] = useState(10);
   
-  const url = `https://rest.coincap.io/v3/assets?limit=${limit}&offset=0&apiKey=87fd2fc537c97f418f9d35bf1b85d9359084cd780ba20da160a87b73c915e9b7`;
+  const url = `https://rest.coincap.io/v3/assets?limit=${limit}&offset=0&apiKey=5add21dbe437ac67f4d350a64f12dbb4804da8d792594ee6f7d2de416ce346a0`;
 
   useEffect(()=>{
     setLoading(true);
@@ -48,13 +48,6 @@ export function Home() {
         }
     }
     fetchData();
-
-    //pooling a cada 10 segundos
-    const interval = setInterval(fetchData, 10000);
-
-    // cleanup para não vazar memória
-    return () => clearInterval(interval);
-
   }, [limit])
 
   async function getData() {
@@ -62,6 +55,12 @@ export function Home() {
     fetch(url)
         .then(response => response.json())
         .then((data: DataProps)=>{
+             if (!data?.data) {
+                console.error("API não retornou dados");
+                setCoins([]);
+                setLoading(false);
+                return;
+            }
             const coinsData = data.data;
 
             const price = Intl.NumberFormat("en-US", {

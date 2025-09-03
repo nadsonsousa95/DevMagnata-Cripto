@@ -11,7 +11,7 @@ export function Detail() {
   const [coin, setCoin] = useState<CoinsProps | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const url = `https://rest.coincap.io/v3/assets?limit=2000&apiKey=87fd2fc537c97f418f9d35bf1b85d9359084cd780ba20da160a87b73c915e9b7`;
+  const url = `https://rest.coincap.io/v3/assets?limit=2000&apiKey=5add21dbe437ac67f4d350a64f12dbb4804da8d792594ee6f7d2de416ce346a0`;
 
   useEffect(() => {
     async function getCoin() {
@@ -113,7 +113,7 @@ export function Detail() {
         </div>
          <div className={styles.infoItem}>
           <span className={styles.label}>Explorar</span>
-            <button className={styles.explorer}><BsSearch/><a href={coin.explorer} target="_blank" rel="noopener noreferrer">Explorar</a></button>
+            <button className={styles.explorer}><BsSearch color="black"/><a href={coin.explorer} target="_blank" rel="noopener noreferrer">Explorar</a></button>
         </div>
       </div>
 

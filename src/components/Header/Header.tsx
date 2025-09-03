@@ -8,6 +8,7 @@ export function Header() {
         <Link to={"/"}>
             <h1 className={styles.logo}>Dev<span>Magnata</span></h1>
         </Link>
+        <p className={styles.subtitle}>Visualizador de Cotações de Criptomoedas em Tempo Real</p>
         
     </header>
   )

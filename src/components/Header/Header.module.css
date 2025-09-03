@@ -14,3 +14,10 @@
 .logo span{
     color: rgb(241, 159, 17);
 }
+
+.subtitle{
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
